@@ -1,0 +1,13 @@
+
+pip install --upgrade ipython jupyter
+pip install requests
+pip install bs4
+pip install lxml
+import requests
+import bs4
+res=requests.get('https://timesofindia.indiatimes.com/')
+type(res)
+soup=bs4.BeautifulSoup(res.text, 'lxml')
+type(soup)
+i=soup.select('img')
+print(i[5])
